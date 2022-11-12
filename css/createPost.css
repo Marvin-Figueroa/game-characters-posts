@@ -1,0 +1,139 @@
+@import url(./general.css);
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: var(--secondary-color);
+}
+
+.form-create {
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  width: 85%;
+  max-width: 90rem;
+}
+
+.form-create__right {
+  flex: 1;
+}
+
+.form-create__left {
+  flex: 1;
+}
+
+.form-create__header {
+  background-color: var(--primary-color);
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.form-create__heading {
+  font-size: 3rem;
+}
+
+.form-create__body {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* Styles for error and success states */
+
+.form-control.success .form-create__input {
+  border-color: var(--primary-color);
+  /* border-color: #2ecc71; */
+}
+
+.form-control.error .form-create__input {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.form-control .form-create__validation-icon {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+
+.form-control.success .form-create__validation-icon.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.form-control.error .form-create__validation-icon.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form-create__validation-feedback {
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error .form-create__validation-feedback {
+  visibility: visible;
+}
+
+.form-create__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.form-create__input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 1.6rem;
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+}
+
+.form-create__input:focus {
+  border: 2px solid var(--primary-color);
+}
+
+.form-create__input--submit {
+  /* width: 80%; */
+  margin: 0 auto;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: inherit;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.form-create__input--submit:hover {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.form-create__input--textarea {
+  resize: none;
+}
+
+@media screen and (max-width: 750px) {
+  .form-create__body {
+    flex-direction: column;
+    gap: 0;
+  }
+}
