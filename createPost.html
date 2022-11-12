@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/432533c615.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Create Post</title>
+  </head>
+  <body>
+    <form class="form-create" method="post" action="#" novalidate>
+      <h2 class="form__heading">Create a new post</h2>
+
+      <div class="form-control">
+        <label class="form-create__label" for="title">Title</label>
+        <div class="form-create__input-group">
+          <input
+            class="form-create__input"
+            type="text"
+            name="title"
+            id="title"
+            maxlength="100"
+            placeholder="Enter the post title"
+          />
+          <i class="form-create__validation-icon"></i>
+        </div>
+        <div class="form-create__validation-feedback"></div>
+      </div>
+
+      <div class="form-control">
+        <label class="form-create__label" for="subtitle">Subtitle</label>
+        <div class="form-create__input-group">
+          <input
+            class="form-create__input"
+            type="text"
+            name="subtitle"
+            id="subtitle"
+            maxlength="100"
+            placeholder="Enter the post subtitle"
+          />
+          <i class="form-create__validation-icon"></i>
+        </div>
+        <div class="form-create__validation-feedback"></div>
+      </div>
+
+      <div class="form-control">
+        <label class="form-create__label" for="author">Author</label>
+        <div class="form-create__input-group">
+          <input
+            class="form-create__input"
+            type="text"
+            name="author"
+            id="author"
+            maxlength="100"
+            placeholder="Enter the post author"
+          />
+          <i class="form-create__validation-icon"></i>
+        </div>
+        <div class="form-create__validation-feedback"></div>
+      </div>
+
+      <div class="form-control">
+        <label class="form-create__label" for="creationDate"
+          >Creation Date</label
+        >
+        <div class="form-create__input-group">
+          <input
+            class="form-create__input"
+            type="date"
+            name="creationDate"
+            id="creationDate"
+          />
+          <i class="form-create__validation-icon"></i>
+        </div>
+        <div class="form-create__validation-feedback"></div>
+      </div>
+
+      <div class="form-control">
+        <label class="form-create__label" for="body">Body</label>
+        <div class="form-create__input-group">
+          <textarea
+            class="form-create__input"
+            name="body"
+            id="body"
+            cols="30"
+            rows="10"
+          >
+          enter your post's content...</textarea
+          >
+          <i class="form-create__validation-icon"></i>
+        </div>
+        <div class="form-create__validation-feedback"></div>
+      </div>
+
+      <div class="form-control">
+        <label class="form-create__label" for="tags">Tags</label>
+        <div class="form-create__input-group">
+          <input
+            class="form-create__input"
+            type="text"
+            name="tags"
+            id="tags"
+            maxlength="200"
+            placeholder="Enter the comma separated tags"
+          />
+          <i class="form-create__validation-icon"></i>
+        </div>
+        <div class="form-create__validation-feedback"></div>
+      </div>
+
+      <div class="form-control">
+        <label class="form-create__label" for="imageUrl">Image URL</label>
+        <div class="form-create__input-group">
+          <input
+            class="form-create__input"
+            type="url"
+            name="imageUrl"
+            id="imageUrl"
+            maxlength="200"
+            placeholder="Enter your post's image url"
+          />
+          <i class="form-create__validation-icon"></i>
+        </div>
+        <div class="form-create__validation-feedback"></div>
+      </div>
+
+      <input
+        class="form-create__input--submit"
+        type="submit"
+        value="Create Post"
+      />
+    </form>
+  </body>
+</html>
