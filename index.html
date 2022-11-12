@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Blog</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <form action="#" class="form-search" id="form-search">
+          <div class="form-control">
+            <label class="form-search__label" for="search-posts"
+              >Search Posts</label
+            >
+            <div class="form-search__input-container">
+              <input
+                class="form-search__input"
+                type="search"
+                name="search-posts"
+                id="search-posts"
+                placeholder="enter a post title"
+              />
+              <button class="form-search__search-btn">
+                <img
+                  class="form-search__search-icon"
+                  src="./images/magnifying-glass-solid.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+        </form>
+        <section class="posts-tags"></section>
+        <section class="posts-featured"></section>
+        <section class="posts"></section>
+        <aside class="all-posts"></aside>
+      </div>
+    </main>
+  </body>
+</html>
