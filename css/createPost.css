@@ -59,19 +59,19 @@ body {
   color: #e74c3c;
 }
 
-.form-control .form-create__validation-icon {
+.form-control i {
   visibility: hidden;
   position: absolute;
   top: 40px;
   right: 10px;
 }
 
-.form-control.success .form-create__validation-icon.fa-check-circle {
+.form-control.success i.fa-check-circle {
   color: #2ecc71;
   visibility: visible;
 }
 
-.form-control.error .form-create__validation-icon.fa-exclamation-circle {
+.form-control.error i.fa-exclamation-circle {
   color: #e74c3c;
   visibility: visible;
 }

@@ -12,14 +12,20 @@
     <title>Create Post</title>
   </head>
   <body>
-    <form class="form-create" method="post" action="#" novalidate>
+    <form
+      class="form-create"
+      id="form-create"
+      method="post"
+      action="#"
+      novalidate
+    >
       <div class="form-create__header">
         <h2 class="form-create__heading">Create a new post</h2>
       </div>
 
       <div class="form-create__body">
         <div class="form-create__left">
-          <div class="form-control error">
+          <div class="form-control">
             <label class="form-create__label" for="title">Title</label>
             <input
               class="form-create__input"
@@ -29,10 +35,9 @@
               maxlength="100"
               placeholder="Enter the post title"
             />
-            <i class="form-create__validation-icon"></i>
-            <small class="form-create__validation-feedback"
-              >Error detected in the title</small
-            >
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small class="form-create__validation-feedback"></small>
           </div>
           <div class="form-control">
             <label class="form-create__label" for="subtitle">Subtitle</label>
@@ -44,23 +49,24 @@
               maxlength="100"
               placeholder="Enter the post subtitle"
             />
-            <i class="form-create__validation-icon"></i>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <small class="form-create__validation-feedback"></small>
           </div>
           <div class="form-control">
             <label class="form-create__label" for="author">Author</label>
-            <div class="form-create__input-group">
-              <input
-                class="form-create__input"
-                type="text"
-                name="author"
-                id="author"
-                maxlength="100"
-                placeholder="Enter the post author"
-              />
-              <i class="form-create__validation-icon"></i>
-            </div>
-            <div class="form-create__validation-feedback"></div>
+
+            <input
+              class="form-create__input"
+              type="text"
+              name="author"
+              id="author"
+              maxlength="100"
+              placeholder="Enter the post author"
+            />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small class="form-create__validation-feedback"></small>
           </div>
           <div class="form-control">
             <label class="form-create__label" for="creationDate"
@@ -85,8 +91,9 @@
               maxlength="200"
               placeholder="Enter your post's image url"
             />
-            <i class="form-create__validation-icon"></i>
-            <div class="form-create__validation-feedback"></div>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small class="form-create__validation-feedback"></small>
           </div>
         </div>
         <div class="form-create__right">
@@ -98,11 +105,10 @@
               id="body"
               cols="30"
               rows="13"
-            >
-          enter your post's content...</textarea
-            >
-            <i class="form-create__validation-icon"></i>
-            <div class="form-create__validation-feedback"></div>
+            ></textarea>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small class="form-create__validation-feedback"></small>
           </div>
           <div class="form-control">
             <label class="form-create__label" for="tags">Tags</label>
@@ -114,17 +120,20 @@
               maxlength="200"
               placeholder="Enter the comma separated tags"
             />
-            <i class="form-create__validation-icon"></i>
-            <div class="form-create__validation-feedback"></div>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small class="form-create__validation-feedback"></small>
           </div>
 
           <input
             class="form-create__input form-create__input--submit"
             type="submit"
             value="Create Post"
+            id="submitPost"
           />
         </div>
       </div>
     </form>
+    <script src="./js/main.js"></script>
   </body>
 </html>
