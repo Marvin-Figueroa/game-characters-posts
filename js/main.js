@@ -1,3 +1,7 @@
+"use strict";
+
+import HttpClient from "./httpClient.js";
+
 const form = document.getElementById("form-create");
 const title = document.getElementById("title");
 const subtitle = document.getElementById("subtitle");
