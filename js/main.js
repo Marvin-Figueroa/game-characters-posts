@@ -25,3 +25,7 @@ form.addEventListener("submit", (e) => {
     tags,
   ]);
 });
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  displayNews();
+});

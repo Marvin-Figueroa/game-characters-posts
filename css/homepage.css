@@ -1,0 +1,95 @@
+@import url(./general.css);
+
+body {
+  background-color: var(--secondary-color);
+}
+
+.container {
+  margin: 4rem auto;
+  width: 90%;
+  max-width: 114rem;
+}
+
+.form-search {
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
+.form-search__search-btn {
+  flex: 1;
+  cursor: pointer;
+  display: block;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+  padding: 1.1rem;
+}
+
+.form-search__search-icon {
+  width: 1.4rem;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-search__label {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.form-search__input-container {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  border: 2px solid var(--primary-color);
+}
+
+.form-search__input {
+  border: none;
+  outline: none;
+  flex: 9;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+
+/* Styles for the tags and the tags container  */
+.posts-tags {
+  margin: 2.2rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.tag__label {
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background-color: white;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.tag__label:hover,
+.tag__input:checked + .tag__label {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.tag__input {
+  visibility: hidden;
+}
+
+.posts-featured {
+}
+
+.posts {
+}
+
+.all-posts {
+}
