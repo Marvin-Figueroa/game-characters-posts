@@ -85,6 +85,62 @@ body {
   visibility: hidden;
 }
 
+/* Styles for posts on the featured section  */
+
+.post {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin: 1.5rem auto;
+}
+
+.post--featured {
+  border: 2px solid var(--primary-color);
+  background: url(../images/sprinkle-bg.svg), white;
+}
+
+.post__info {
+}
+
+.post__author {
+  font-weight: bold;
+}
+
+.post__date {
+}
+
+.post__title {
+  font-size: 3rem;
+}
+
+.post__title-link:link,
+.post__title-link:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post__title-link:hover,
+.post__title-link:active {
+  color: var(--primary-color);
+}
+
+.post__tags {
+  display: flex;
+  gap: 1rem;
+}
+
+.post__tag {
+  color: var(--color-accent);
+}
+
+.post__likes {
+}
+
 .posts-featured {
 }
 
