@@ -80,6 +80,7 @@ async function renderPostDetailsMarkup(post) {
     </p>
   </div>
   <div class="post-details__comments">
+    <p class="post-details__label">All comments (${commentsByPost.length})</p>
     <form class="post-details__new-comment">
       <select class="new-comment__author" name="user" id="user">
       ${usersOptions.join("")}
@@ -91,7 +92,7 @@ async function renderPostDetailsMarkup(post) {
         cols="30"
         rows="6"
       ></textarea>
-      <button new-comment__submit>Submit</button>
+      <button class="new-comment__submit">Submit</button>
     </form>
     ${commentsByPost.map((comment) => createCommentMarkup(comment.id)).join("")}
   </div>

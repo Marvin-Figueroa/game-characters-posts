@@ -1,0 +1,157 @@
+@import url(./general.css);
+
+body {
+  background-color: var(--secondary-color);
+}
+
+.container {
+  width: 85%;
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+.post-details {
+  max-width: 90rem;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-details__image-container {
+  /* flex: 3; */
+  /* height: 100%; */
+}
+
+.post-details__image {
+  display: block;
+  width: 100%;
+  /* object-fit: cover; */
+}
+
+.post-details__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem;
+}
+
+.post-details__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-details__creation {
+}
+
+.post-details__author {
+  font-weight: bold;
+}
+
+.post-details__date {
+}
+
+.post-details__likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+}
+
+.post-details__likes i {
+  cursor: pointer;
+}
+
+.post-details__title {
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+.post-details__subtitle {
+  color: cadetblue;
+}
+
+.post-details__tags {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  color: var(--color-accent);
+}
+
+.post-details__body {
+  font-size: 1.8rem;
+}
+
+.post-details__comments {
+  border-top: 1px solid darkgray;
+  padding: 5rem;
+}
+
+.post-details__label {
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.post-details__new-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 auto;
+  /* width: 85%; */
+}
+
+.new-comment__author,
+.new-comment__submit {
+  padding: 1rem;
+  font-family: inherit;
+  align-self: flex-start;
+  cursor: pointer;
+  outline: none;
+  border-radius: 6px;
+}
+
+.new-comment__text {
+  resize: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1.6rem;
+  padding: 1rem;
+  outline: none;
+}
+
+.new-comment__submit {
+  color: white;
+  border: none;
+  font-weight: bold;
+  background-color: var(--primary-color);
+}
+
+.new-comment__submit:focus,
+.new-comment__text:focus,
+.new-comment__author:focus {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.post-details__comment {
+  padding: 1.5rem;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.comment__author {
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.comment__text {
+}
