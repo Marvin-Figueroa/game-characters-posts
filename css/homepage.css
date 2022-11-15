@@ -37,7 +37,7 @@ body {
 
 .form-search__label {
   margin-bottom: 1rem;
-  font-size: 2rem;
+  font-size: 3.5rem;
   color: var(--primary-color);
 }
 
@@ -131,6 +131,7 @@ body {
 
 .post__tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
