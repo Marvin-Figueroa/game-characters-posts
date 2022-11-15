@@ -4,6 +4,8 @@ const detailsContainer = document.querySelector(".post-details-container");
 let comments;
 let users;
 let tags;
+let currentPost;
+let likePost = false;
 
 const httpClient = new HttpClient(
   "https://delightful-likeable-principle.glitch.me"
@@ -13,6 +15,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   users = await httpClient.get("/users");
   tags = await httpClient.get("/tags");
   comments = await httpClient.get("/comments");
+  currentPost = await httpClient.get(`/posts/${currentPostId}`);
   renderDetails();
 });
 
@@ -56,16 +59,50 @@ document.body.addEventListener("input", (e) => {
   }
 });
 
-document.body.addEventListener("click", async (e) => {
-  if (e.target.id === "post-details-delete") {
-    if (
-      confirm("Do you really want to delete this post?\nThis can´t be undone.")
-    ) {
-      await httpClient.delete(`/posts/${currentPostId}`);
-      window.location.replace("/index.html");
+document.body.addEventListener(
+  "click",
+  throttle(async (e) => {
+    if (e.target.id === "post-details-delete") {
+      if (
+        confirm(
+          "Do you really want to delete this post?\nThis can't be undone."
+        )
+      ) {
+        await httpClient.delete(`/posts/${currentPostId}`);
+        window.location.replace("/index.html");
+      }
+    } else if (e.target.id === "post-likes") {
+      const updatedPost = await toggleLikeToPost(currentPost);
+      document.getElementById("post-likes-number").textContent =
+        updatedPost.likes;
+      e.target.classList.toggle("fa-solid");
     }
-  }
-});
+  }, 1500)
+);
+
+async function toggleLikeToPost(post) {
+  likePost = !likePost;
+  let currentPostLikes = post.likes;
+  const likes = likePost ? currentPostLikes + 1 : currentPostLikes;
+
+  const updatedPost = await httpClient.patch(`/posts/${post.id}`, {
+    likes: likes,
+  });
+
+  return updatedPost;
+}
+
+function throttle(fn, interval) {
+  let enableCall = true;
+
+  return (...args) => {
+    if (!enableCall) return;
+
+    enableCall = false;
+    fn(...args);
+    setTimeout(() => (enableCall = true), interval);
+  };
+}
 
 async function renderDetails() {
   const post = await httpClient.get(`/posts/${currentPostId}`);
@@ -127,9 +164,9 @@ async function renderPostDetailsMarkup(post) {
           day: "numeric",
         })}</small>
       </div>
-      <span class="post-details__likes">
-        <i class="fa-regular fa-heart"></i> ${likes}
-      </span>
+      <div class="post-details__likes">
+        <i id="post-likes" class="fa-regular fa-heart"></i><span id='post-likes-number'>${likes}</span>
+      </div>
     </div>
     <h2 class="post-details__title">${title}</h2>
     <h3 class="post-details__subtitle">${subTitle}</h3>

@@ -69,15 +69,9 @@ body {
   flex-direction: column;
 }
 
-.post-details__image-container {
-  /* flex: 3; */
-  /* height: 100%; */
-}
-
 .post-details__image {
   display: block;
   width: 100%;
-  /* object-fit: cover; */
 }
 
 .post-details__text-container {
@@ -107,8 +101,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
   color: var(--primary-color);
+  font-size: 1.8rem;
 }
 
 .post-details__likes i {
