@@ -22,15 +22,18 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   displayPosts(posts);
 });
 
-formSearch.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (searchInput.value.trim().length > 0) {
-    tagsContainer.innerHTML = "";
-    postsContainer.innerHTML = "";
-    featuredPostsContainer.innerHTML = "";
-    displayFilteredPostsBySearch(posts, searchInput.value);
-  }
-});
+formSearch.addEventListener(
+  "submit",
+  throttle((e) => {
+    e.preventDefault();
+    if (searchInput.value.trim().length > 0) {
+      tagsContainer.innerHTML = "";
+      postsContainer.innerHTML = "";
+      featuredPostsContainer.innerHTML = "";
+      displayFilteredPostsBySearch(posts, searchInput.value);
+    }
+  }, 1500)
+);
 
 tagsContainer.addEventListener("change", (e) => {
   postsContainer.innerHTML = "";
@@ -38,7 +41,6 @@ tagsContainer.addEventListener("change", (e) => {
   displayFilteredPostsByTag(posts, e.target.id);
 });
 
-// Debounde/Throttle this
 searchInput.addEventListener("input", (e) => {
   if (e.target.value.trim().length === 0) {
     renderTags(tags);
@@ -141,4 +143,16 @@ function displayFilteredPostsByTag(posts, tagSlug) {
 
     displayPosts(filteredPosts);
   }
+}
+
+function throttle(fn, interval) {
+  let enableCall = true;
+
+  return (...args) => {
+    if (!enableCall) return;
+
+    enableCall = false;
+    fn(...args);
+    setTimeout(() => (enableCall = true), interval);
+  };
 }
