@@ -8,7 +8,7 @@
       src="https://kit.fontawesome.com/432533c615.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./css/createPost.css" />
+    <link rel="stylesheet" href="./css/edit.css" />
     <title>Create Post</title>
   </head>
   <body>
@@ -20,7 +20,7 @@
       novalidate
     >
       <div class="form-create__header">
-        <h2 class="form-create__heading">Create a new post</h2>
+        <h2 class="form-create__heading">Editing the post</h2>
       </div>
 
       <div class="form-create__body">
@@ -55,18 +55,11 @@
           </div>
           <div class="form-control">
             <label class="form-create__label" for="author">Author</label>
-
-            <input
+            <select
               class="form-create__input"
-              type="text"
               name="author"
               id="author"
-              maxlength="100"
-              placeholder="Enter the post author"
-            />
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small class="form-create__validation-feedback"></small>
+            ></select>
           </div>
           <div class="form-control">
             <label class="form-create__label" for="creationDate"
@@ -91,8 +84,6 @@
               maxlength="200"
               placeholder="Enter your post's image url"
             />
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
             <small class="form-create__validation-feedback"></small>
           </div>
         </div>
@@ -128,12 +119,12 @@
           <input
             class="form-create__input form-create__input--submit"
             type="submit"
-            value="Create Post"
+            value="Save Post"
             id="submitPost"
           />
         </div>
       </div>
     </form>
-    <script src="./js/main.js" type="module"></script>
+    <script src="./js/edit.js" type="module"></script>
   </body>
 </html>
