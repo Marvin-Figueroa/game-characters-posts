@@ -60,9 +60,15 @@ body {
 
 /* Styles for the tags and the tags container  */
 .posts-tags {
-  margin: 2.2rem auto;
   display: flex;
   justify-content: center;
+  align-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.posts-tags > * {
+  margin-top: 3rem;
 }
 
 .tag__label {
@@ -137,16 +143,4 @@ body {
 
 .post__tag {
   color: var(--color-accent);
-}
-
-.post__likes {
-}
-
-.posts-featured {
-}
-
-.posts {
-}
-
-.all-posts {
 }
