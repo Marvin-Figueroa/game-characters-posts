@@ -3,29 +3,30 @@ const urlRegEx =
 
 const nameRegEx = /^\b([A-Za-zÀ-ÿ][-,a-z. ']+[ ]*)+$/;
 
-const tagRegEx = /^[a-z0-9\s]+$/i;
-
-export default function checkInputs(inputs) {
+export function areValidInputs(inputs) {
+  let validInputs = true;
   inputs.forEach((input) => {
     const { value, name } = input;
 
     if (value.trim() === "") {
       setInputError(input, "This field cannot be empty");
+      validInputs = false;
     } else if (name === "author") {
-      if (!nameRegEx.test(value)) {
-        setInputError(input, "This field only accepts letters");
-      } else {
-        setInputSuccess(input);
-      }
+      setInputSuccess(input);
     } else if (name === "imageUrl") {
       if (!urlRegEx.test(value)) {
         setInputError(input, "Enter a valid image URL");
+        validInputs = false;
       } else {
         setInputSuccess(input);
       }
     } else if (name === "tags") {
-      if (!validateTags(value)) {
-        setInputError(input, "Tags must be comma separated alfanumeric values");
+      if (!areValidTags(value)) {
+        setInputError(
+          input,
+          "Must be comma separated alfanumeric lowercase values"
+        );
+        validInputs = false;
       } else {
         setInputSuccess(input);
       }
@@ -33,6 +34,8 @@ export default function checkInputs(inputs) {
       setInputSuccess(input);
     }
   });
+
+  return validInputs;
 }
 
 function setInputError(input, message) {
@@ -47,11 +50,18 @@ function setInputSuccess(input) {
   formControl.className = "form-control success";
 }
 
-function validateTags(tags) {
-  return (
-    tags
-      .split(",")
-      .map((tag) => tag.trim())
-      .filter((tag) => tagRegEx.test(tag)).length > 0
-  );
+export function areValidTags(tags) {
+  const tagRegEx = /^\b\w*[-]{0,1}\w*\b$/;
+  let validTags = true;
+
+  tags
+    .split(",")
+    .map((tag) => tag.trim())
+    .forEach((tag) => {
+      if (!tagRegEx.test(tag)) {
+        validTags = false;
+      }
+    });
+
+  return validTags;
 }
