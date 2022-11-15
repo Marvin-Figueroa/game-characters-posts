@@ -73,6 +73,7 @@ document.body.addEventListener(
       }
     } else if (e.target.id === "post-likes") {
       const updatedPost = await toggleLikeToPost(currentPost);
+      currentPost = updatedPost;
       document.getElementById("post-likes-number").textContent =
         updatedPost.likes;
       e.target.classList.toggle("fa-solid");
@@ -223,7 +224,4 @@ function createCommentMarkup(commentId) {
 }
 
 // AUN FALTA
-
-// 3 - que el usuario pueda darle like al post y se sume enviando una peticion patch, con un efecto de toggle al clickar en el icono de like usando debounce
-
 // 8 - usar el patron factory en la app
